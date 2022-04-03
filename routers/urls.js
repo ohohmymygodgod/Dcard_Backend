@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('../database/database.js')
 
-router.post("/", async function(req, res) {
+router.post("/", function(req, res) {
     var data = req.body;
     const sql = 'insert into urls (originalUrl, expireAt) values (?,?)';
     const params = [data.url, Date.parse(data.expireAt)]
